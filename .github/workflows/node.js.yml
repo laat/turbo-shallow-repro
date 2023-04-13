@@ -1,0 +1,20 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 2
+    - uses: actions/setup-node@v3
+    - run: npx turbo@1.9.0 run build --filter "...[HEAD^]" --dry json
+    - run: npx turbo@1.9.1 run build --filter "...[HEAD^]" --dry json
