@@ -20,3 +20,5 @@ jobs:
     - run: npx turbo@1.9.1 run build --filter "...[HEAD^]" --dry json
     - run: npx turbo@1.9.2 run build --filter "...[HEAD^]" --dry json
       if: always()
+    - run: npx turbo@1.9.3 run build --filter "...[HEAD^]" --dry json
+      if: always()
