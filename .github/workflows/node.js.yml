@@ -17,4 +17,6 @@ jobs:
         fetch-depth: 2
     - uses: actions/setup-node@v3
     - run: npx turbo@1.9.0 run build --filter "...[HEAD^]" --dry json
-    - run: npx turbo@1.9.1 run build --filter "...[HEAD^]" --dry json
+    - run: npx turbo@1.9.1 run build --filter "...[HEAD^]" --dry json --verbosity 255
+    - run: npx turbo@1.9.2 run build --filter "...[HEAD^]" --dry json --verbosity 255
+      if: always()
